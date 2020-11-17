@@ -11,45 +11,20 @@ var magenta = document.querySelector(".magenta")
 var yellow = document.querySelector(".yellow")
 
 
-var body = document.querySelector("body")
-var bodyColor = window.getComputedStyle(body).backgroundColor
+var center = document.querySelector(".center")
 
+const getBGColor = (selectedElement) => {
+    return window.getComputedStyle(selectedElement).background;
+}
 
-yellow.addEventListener("mouseenter", () => {
-    body.style.backgroundColor = "yellow"
-})
-yellow.addEventListener("mouseleave", () => {
-    body.style.backgroundColor = bodyColor
-})
+const magicColorChanger = (element, color) => {
+    return element.addEventListener("mouseenter", () => {
+        center.style.background = color;
+    });
+};
 
-
-red.addEventListener("mouseenter", () => {
-    body.style.backgroundColor = "red"
-})
-red.addEventListener("mouseleave", () => {
-    body.style.backgroundColor = bodyColor
-})
-
-
-cyan.addEventListener("mouseenter", () => {
-    body.style.backgroundColor = "cyan"
-})
-cyan.addEventListener("mouseleave", () => {
-    body.style.backgroundColor = bodyColor
-})
-
-
-blue.addEventListener("mouseenter", () => {
-    body.style.backgroundColor = "blue"
-})
-blue.addEventListener("mouseleave", () => {
-    body.style.backgroundColor = bodyColor
-})
-
-
-magenta.addEventListener("mouseenter", () => {
-    body.style.backgroundColor = "magenta"
-})
-magenta.addEventListener("mouseleave", () => {
-    body.style.backgroundColor = bodyColor
-})
+magicColorChanger(red, getBGColor(red));
+magicColorChanger(cyan, getBGColor(cyan));
+magicColorChanger(blue, getBGColor(blue));
+magicColorChanger(magenta, getBGColor(magenta));
+magicColorChanger(pink, getBGColor(yellow));

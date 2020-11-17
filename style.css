@@ -10,7 +10,7 @@ div.color-hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100vh;
+	height: 60vh;
 }
 .color {
 	width: 10rem;
@@ -50,6 +50,11 @@ div.color-hover {
 	/* animation: drop 1s 1 ease-in; */
 }
 
+.center {
+	width: 50%;
+	height: 20vh;
+	margin: 100px auto 0 auto;
+}
 @keyframes drop {
 	from {
 		opacity: 0;

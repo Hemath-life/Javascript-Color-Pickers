@@ -18,13 +18,18 @@ const getBGColor = (selectedElement) => {
 }
 
 const magicColorChanger = (element, color) => {
-    return element.addEventListener("mouseenter", () => {
+    element.addEventListener("mouseenter", () => {
+        center.style.opacity = "1";
         center.style.background = color;
-    });
+    })
+    element.addEventListener("mouseleave", () => {
+        center.style.opacity = "0";
+    })
 };
+
 
 magicColorChanger(red, getBGColor(red));
 magicColorChanger(cyan, getBGColor(cyan));
 magicColorChanger(blue, getBGColor(blue));
 magicColorChanger(magenta, getBGColor(magenta));
-magicColorChanger(pink, getBGColor(yellow));
+magicColorChanger(yellow, getBGColor(yellow));
